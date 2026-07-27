@@ -43,14 +43,32 @@ This enforces a single launchd-owned runtime for menu control.
 
 ### Command-line build
 
-Use the `**OCA mDNS Gateway`** scheme (matches the app/target name). 
+Prefer the repo-root Makefile (builds the CLI helper first, then the menu app):
+
+```bash
+cd /path/to/oca-mdns-gateway
+make menu CONFIG=Release
+```
+
+Or from `macos-menu` with xcodebuild directly (CLI binary must already exist at `../build/oca-mdns-gateway`):
 
 ```bash
 cd macos-menu
 xcodebuild -scheme "OCA mDNS Gateway" -configuration Release -destination 'platform=macOS' build
 ```
 
-Run `**xcodebuild -list -project "OCA mDNS Gateway.xcodeproj"**` to see schemes.
+Run `xcodebuild -list -project "OCA mDNS Gateway.xcodeproj"` to see schemes.
+
+### Signed / notarized release
+
+One-shot build, optional notarize + staple, and publish to repo-root `dist/` (`.app` and `ditto --keepParent` zip). Credentials live in gitignored `.env.local` (see [`.env.local.example`](../.env.local.example)):
+
+```bash
+cp .env.local.example .env.local   # edit identity / team / NOTARY_PROFILE
+./macos-menu/release-menubar.sh --clean --notarize
+```
+
+Details: [HOWTO-DISTRIBUTE.md](HOWTO-DISTRIBUTE.md).
 
 ## Sandbox
 
