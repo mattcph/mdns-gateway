@@ -39,16 +39,17 @@ final class PreferencesWindowController: NSObject, NSWindowDelegate {
 
         let host = NSHostingView(rootView: PreferencesView(viewModel: viewModel))
         let size = host.fittingSize
-        let w = max(460, size.width)
-        let h = max(300, size.height)
+        let w = max(560, size.width)
+        let h = max(400, size.height)
         let win = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: w, height: h),
-            styleMask: [.titled, .closable, .miniaturizable],
+            styleMask: [.titled, .closable, .miniaturizable, .resizable],
             backing: .buffered,
             defer: false
         )
         win.title = "OCA mDNS Gateway"
         win.contentView = host
+        win.minSize = NSSize(width: 560, height: 400)
         win.center()
         win.isReleasedWhenClosed = false
         win.delegate = self

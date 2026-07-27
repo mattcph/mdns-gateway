@@ -3,6 +3,7 @@ import SwiftUI
 
 struct PreferencesView: View {
     @ObservedObject var viewModel: PreferencesViewModel
+    @State private var mitExpanded = false
 
     var body: some View {
         Form {
@@ -32,10 +33,42 @@ struct PreferencesView: View {
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
+            Section("Licenses") {
+                Text("Third-party and app licenses.")
+                    .font(.callout)
+                    .foregroundStyle(.secondary)
+
+                Table(LicensesInfo.attributions) {
+                    TableColumn("Component") { (row: LicenseAttribution) in
+                        Text(row.name)
+                    }
+                    .width(min: 120, ideal: 160)
+                    TableColumn("License") { (row: LicenseAttribution) in
+                        Text(row.license)
+                    }
+                    .width(min: 50, ideal: 60)
+                    TableColumn("Copyright") { (row: LicenseAttribution) in
+                        Text(row.copyright)
+                            .lineLimit(2)
+                    }
+                    .width(min: 180, ideal: 260)
+                }
+                .frame(minHeight: 120, idealHeight: 140)
+
+                DisclosureGroup("MIT License", isExpanded: $mitExpanded) {
+                    ScrollView {
+                        Text(LicensesInfo.mitLicenseBody)
+                            .font(.system(.caption, design: .monospaced))
+                            .textSelection(.enabled)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    .frame(maxHeight: 160)
+                }
+            }
         }
         .formStyle(.grouped)
         .padding()
-        .frame(minWidth: 440, minHeight: 300)
+        .frame(minWidth: 560, minHeight: 400)
         .onAppear {
             viewModel.launchAtLogin = LaunchAtLogin.isEnabled
         }

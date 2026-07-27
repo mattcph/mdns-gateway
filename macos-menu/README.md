@@ -6,7 +6,7 @@ macOS menu-bar (accessory) app for **OCA mDNS Gateway**. It starts and stops the
 
 ### Preferences
 
-Port and token are saved when you **close** the Preferences window (`windowWillClose`). If the gateway is already running and you change port or token, **Stop** from the menu, close Preferences (to persist), then **Start** again so the LaunchAgent plist picks up the new values.
+Port and token are saved when you **close** the Preferences window (`windowWillClose`). If the gateway is already running and you change port or token, **Stop** from the menu, close Preferences (to persist), then **Start** again so the LaunchAgent plist picks up the new values. The **Licenses** section shows a Component / License / Copyright table for the app and bundled libraries, plus the expandable MIT license text.
 
 ### View Devices
 
