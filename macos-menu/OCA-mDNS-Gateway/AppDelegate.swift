@@ -2,6 +2,7 @@ import AppKit
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
     private let preferencesController = PreferencesWindowController()
+    private let devicesController = DevicesWindowController()
     private var menuController: StatusMenuController?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
@@ -9,7 +10,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             return
         }
         NSApp.setActivationPolicy(.accessory)
-        menuController = StatusMenuController(preferences: preferencesController)
+        menuController = StatusMenuController(
+            preferences: preferencesController,
+            devices: devicesController
+        )
     }
 
     @objc func openPreferences() {

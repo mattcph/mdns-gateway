@@ -6,10 +6,12 @@ final class StatusMenuController: NSObject {
     private let menu: NSMenu
     private let gateway = GatewayProcessController.shared
     private let preferences: PreferencesWindowController
+    private let devices: DevicesWindowController
     private var cancellables = Set<AnyCancellable>()
 
-    init(preferences: PreferencesWindowController) {
+    init(preferences: PreferencesWindowController, devices: DevicesWindowController) {
         self.preferences = preferences
+        self.devices = devices
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         menu = NSMenu()
         super.init()
@@ -91,6 +93,11 @@ final class StatusMenuController: NSObject {
 
         menu.addItem(.separator())
 
+        if gateway.isRunning {
+            let viewDevices = menu.addItem(withTitle: "View Devices…", action: #selector(openDevices), keyEquivalent: "")
+            viewDevices.target = self
+        }
+
         let logs = menu.addItem(withTitle: "Open Logs Folder…", action: #selector(openLogs), keyEquivalent: "")
         logs.target = self
 
@@ -120,6 +127,10 @@ final class StatusMenuController: NSObject {
         let dir = appSupport.appendingPathComponent("\(GatewaySettings.applicationSupportFolderName)/Logs", isDirectory: true)
         try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
         NSWorkspace.shared.open(dir)
+    }
+
+    @objc private func openDevices() {
+        devices.show()
     }
 
     @objc private func openPrefs() {

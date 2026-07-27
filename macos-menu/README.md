@@ -8,6 +8,10 @@ macOS menu-bar (accessory) app for **OCA mDNS Gateway**. It starts and stops the
 
 Port and token are saved when you **close** the Preferences window (`windowWillClose`). If the gateway is already running and you change port or token, **Stop** from the menu, close Preferences (to persist), then **Start** again so the LaunchAgent plist picks up the new values.
 
+### View Devices
+
+When the gateway is running, **View Devices…** opens a window with a human-readable table of `_oca._tcp` instances from the live `GET /v1/devices` cache (same data as the HTTP API). Select a row for TXT records and timestamps. **Refresh** reloads the list; the window also auto-refreshes about every 2.5 seconds while open. **Export…** saves pretty-printed JSON matching `{ "instances": [ … ] }` from `/v1/devices` (all fields, including `txt`).
+
 ## Requirements
 
 - Xcode 15+ (Swift 5)

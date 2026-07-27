@@ -15,6 +15,11 @@
 		A00000000000000000000406 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000106 /* PreferencesWindowController.swift */; };
 		A00000000000000000000407 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000107 /* PreferencesView.swift */; };
 		A00000000000000000000408 /* LaunchAtLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000108 /* LaunchAtLogin.swift */; };
+		A00000000000000000000409 /* DeviceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000109 /* DeviceModels.swift */; };
+		A0000000000000000000040A /* GatewayAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000010A /* GatewayAPIClient.swift */; };
+		A0000000000000000000040B /* DevicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000010B /* DevicesViewModel.swift */; };
+		A0000000000000000000040C /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000010C /* DevicesView.swift */; };
+		A0000000000000000000040D /* DevicesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0000000000000000000010D /* DevicesWindowController.swift */; };
 		FD44FDAA2FA763B200717506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD44FDA92FA763B200717506 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +33,11 @@
 		A00000000000000000000106 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		A00000000000000000000107 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		A00000000000000000000108 /* LaunchAtLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLogin.swift; sourceTree = "<group>"; };
+		A00000000000000000000109 /* DeviceModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModels.swift; sourceTree = "<group>"; };
+		A0000000000000000000010A /* GatewayAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayAPIClient.swift; sourceTree = "<group>"; };
+		A0000000000000000000010B /* DevicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesViewModel.swift; sourceTree = "<group>"; };
+		A0000000000000000000010C /* DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
+		A0000000000000000000010D /* DevicesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesWindowController.swift; sourceTree = "<group>"; };
 		A00000000000000000000110 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A00000000000000000000111 /* entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = entitlements.plist; sourceTree = "<group>"; };
 		FD44FDA92FA763B200717506 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,6 +82,11 @@
 				A00000000000000000000106 /* PreferencesWindowController.swift */,
 				A00000000000000000000107 /* PreferencesView.swift */,
 				A00000000000000000000108 /* LaunchAtLogin.swift */,
+				A00000000000000000000109 /* DeviceModels.swift */,
+				A0000000000000000000010A /* GatewayAPIClient.swift */,
+				A0000000000000000000010B /* DevicesViewModel.swift */,
+				A0000000000000000000010C /* DevicesView.swift */,
+				A0000000000000000000010D /* DevicesWindowController.swift */,
 				A00000000000000000000110 /* Info.plist */,
 				A00000000000000000000111 /* entitlements.plist */,
 			);
@@ -201,6 +216,11 @@
 				A00000000000000000000406 /* PreferencesWindowController.swift in Sources */,
 				A00000000000000000000407 /* PreferencesView.swift in Sources */,
 				A00000000000000000000408 /* LaunchAtLogin.swift in Sources */,
+				A00000000000000000000409 /* DeviceModels.swift in Sources */,
+				A0000000000000000000040A /* GatewayAPIClient.swift in Sources */,
+				A0000000000000000000040B /* DevicesViewModel.swift in Sources */,
+				A0000000000000000000040C /* DevicesView.swift in Sources */,
+				A0000000000000000000040D /* DevicesWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
