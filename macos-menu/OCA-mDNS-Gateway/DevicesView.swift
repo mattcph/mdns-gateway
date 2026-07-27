@@ -62,7 +62,7 @@ struct DevicesView: View {
                 }
                 .width(min: 100, ideal: 140)
                 TableColumn("Port") { (device: DeviceInstance) in
-                    Text("\(device.port)")
+                    Text(verbatim: String(device.port))
                 }
                 .width(min: 50, ideal: 60)
                 TableColumn("Interface") { (device: DeviceInstance) in
